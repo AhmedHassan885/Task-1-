@@ -1,4 +1,7 @@
+import 'package:course/config/app_assets.dart';
+import 'package:course/config/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -6,37 +9,32 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey[200],
         appBar: AppBar(
-          backgroundColor: Colors.grey[200],
           actions: [
             Container(
               margin: EdgeInsets.only(right: 10),
               width: 70,
               height: 27,
               decoration: BoxDecoration(
-                  color: Colors.green[100],
+                  color: AppColors.ButtonColor,
                   borderRadius: BorderRadius.circular(20)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(
-                    Icons.plus_one,
-                    size: 20,
-                  ),
-                  Text("Add")
-                ],
+                children: [SvgPicture.asset(ImageAssets.plus), Text("Add")],
               ),
             )
           ],
-          leading: Icon(
-            Icons.arrow_back_ios_new,
-            size: 20,
-          ),
+          leading: IconButton(
+              onPressed: () {}, icon: SvgPicture.asset(ImageAssets.arrowBack)),
           centerTitle: true,
-          title: Text("Today Tasks"),
+          title: Text(
+            "Today Tasks",
+            style: TextStyle(
+                fontWeight: FontWeight.w300,
+                fontFamily: "Lexend Deca",
+                color: Color(0xff24252C)),
+          ),
         ),
         body: Column(
           children: [
@@ -49,7 +47,7 @@ class App extends StatelessWidget {
                   width: 70,
                   height: 30,
                   decoration: BoxDecoration(
-                      color: Colors.green,
+                      color: AppColors.darkGreen,
                       borderRadius: BorderRadius.circular(30)),
                   child: Text(
                     "All",
@@ -110,7 +108,7 @@ class App extends StatelessWidget {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey[300],
+                        color: Colors.green[100],
                         borderRadius: BorderRadius.circular(3)),
                     alignment: Alignment.topCenter,
                     width: 14,
@@ -143,8 +141,7 @@ class App extends StatelessWidget {
                           height: 20,
                           child: Icon(
                             Icons.shopping_bag,
-                            size: 16,
-                            color: Colors.white,
+                            size: 10,
                           )),
                       Text(
                         "   Work Task",
@@ -204,7 +201,7 @@ class App extends StatelessWidget {
                         alignment: Alignment.center,
                         width: 58,
                         decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: AppColors.darkGreen,
                             borderRadius: BorderRadius.circular(25)),
                         child: Text(
                           "Done",
@@ -255,7 +252,7 @@ class App extends StatelessWidget {
                         alignment: Alignment.center,
                         width: 58,
                         decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: AppColors.darkGreen,
                             borderRadius: BorderRadius.circular(25)),
                         child: Text(
                           "Done",
@@ -355,7 +352,7 @@ class App extends StatelessWidget {
                         alignment: Alignment.center,
                         width: 58,
                         decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: AppColors.darkGreen,
                             borderRadius: BorderRadius.circular(25)),
                         child: Text(
                           "Done",

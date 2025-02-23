@@ -1,4 +1,6 @@
+import 'package:course/config/app_colors.dart';
 import 'package:course/task.dart';
+import 'package:course/task2.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,8 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          scaffoldBackgroundColor: AppColors.BackgroundColor,
+          appBarTheme: AppBarTheme(
+            backgroundColor: AppColors.BackgroundColor,
+          )),
       debugShowCheckedModeBanner: false,
-      home: const App(),
+      home: const train(),
     );
   }
 }
