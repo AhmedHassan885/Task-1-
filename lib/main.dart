@@ -1,6 +1,5 @@
 import 'package:course/config/app_colors.dart';
-import 'package:course/task.dart';
-import 'package:course/task2.dart';
+import 'package:course/task3.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: AppColors.BackgroundColor,
           )),
       debugShowCheckedModeBanner: false,
-      home: const train(),
+      home: const Profile(),
     );
   }
 }

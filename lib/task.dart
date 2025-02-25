@@ -21,12 +21,12 @@ class App extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [SvgPicture.asset(ImageAssets.plus), Text("Add")],
+                children: [SvgPicture.asset(ImageAssets.plus_icon), Text("Add")],
               ),
             )
           ],
           leading: IconButton(
-              onPressed: () {}, icon: SvgPicture.asset(ImageAssets.arrowBack)),
+              onPressed: () {}, icon: SvgPicture.asset(ImageAssets.arrowBack_icon)),
           centerTitle: true,
           title: Text(
             "Today Tasks",

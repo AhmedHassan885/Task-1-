@@ -1,5 +1,6 @@
 import 'package:course/config/app_assets.dart';
 import 'package:course/config/app_colors.dart';
+import 'package:course/config/defualt_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -12,7 +13,7 @@ class train extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {}, icon: SvgPicture.asset(ImageAssets.arrowBack)),
+            onPressed: () {}, icon: SvgPicture.asset(ImageAssets.arrowBack_icon)),
         actions: [
           Container(
             margin: EdgeInsets.only(right: 10),
@@ -24,7 +25,7 @@ class train extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SvgPicture.asset(ImageAssets.basket),
+                SvgPicture.asset(ImageAssets.basket_icon),
                 Text(
                   "Delete",
                   style: TextStyle(color: Colors.white),
@@ -42,8 +43,7 @@ class train extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             Padding(
               padding: const EdgeInsets.all(14.0),
@@ -58,165 +58,37 @@ class train extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                maxLines: 2,
-                style: TextStyle(
-                    color: Color(0xff24252C),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Lexend Deca",
-                    fontSize: 14),
-                decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(10),
-                    label: Text(
-                      "Task Group",
-                      style: TextStyle(
-                          color: Color(0xff6E6A7C),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 9,
-                          fontFamily: "Lexend Deca"),
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(17),
-                        borderSide: BorderSide(color: Colors.white)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: const Color.fromRGBO(255, 255, 255, 1)),
-                        borderRadius: BorderRadius.circular(17)),
-                    fillColor: Colors.white,
-                    filled: true,
-                    prefixIcon: SvgPicture.asset(
-                      ImageAssets.home,
-                      fit: BoxFit.scaleDown,
-                    )),
+            DefaultFormField(
+              height: 40,
+              icon: SvgPicture.asset(
+                ImageAssets.home_icon,
+                fit: BoxFit.scaleDown,
               ),
+             
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                maxLines: 2,
-                style: TextStyle(
-                    color: Color(0xff24252C),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Lexend Deca",
-                    fontSize: 14),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10),
-                  label: Text(
-                    "Task Name",
-                    style: TextStyle(
-                        color: Color(0xff6E6A7C),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 9,
-                        fontFamily: "Lexend Deca"),
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(17),
-                      borderSide: BorderSide(color: Colors.white)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(17)),
-                  fillColor: Colors.white,
-                  filled: true,
-                ),
-              ),
+            DefaultFormField(
+              height: 40,
+             
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                maxLines: 5,
-                style: TextStyle(
-                    color: Color(0xff24252C),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Lexend Deca",
-                    fontSize: 14),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10),
-                  label: Text(
-                    "Description ",
-                    style: TextStyle(
-                        color: Color(0xff6E6A7C),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 9,
-                        fontFamily: "Lexend Deca"),
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(17),
-                      borderSide: BorderSide(color: Colors.white)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(17)),
-                  fillColor: Colors.white,
-                  filled: true,
-                ),
-              ),
+            DefaultFormField(
+              max_lines: 5,
+            
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                style: TextStyle(
-                    color: Color(0xff24252C),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Lexend Deca",
-                    fontSize: 14),
-                decoration: InputDecoration(
-                  prefixIcon: SvgPicture.asset(
-                    ImageAssets.calender,
-                    fit: BoxFit.scaleDown,
-                  ),
-                  contentPadding: EdgeInsets.all(10),
-                  label: Text(
-                    "Start Date",
-                    style: TextStyle(
-                        color: Color(0xff6E6A7C),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 9,
-                        fontFamily: "Lexend Deca"),
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(17),
-                      borderSide: BorderSide(color: Colors.white)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(17)),
-                  fillColor: Colors.white,
-                  filled: true,
-                ),
+            DefaultFormField(
+              height: 40,
+              icon: SvgPicture.asset(
+                ImageAssets.calender_icon,
+                fit: BoxFit.scaleDown,
               ),
+             
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                style: TextStyle(
-                    color: Color(0xff24252C),
-                    fontWeight: FontWeight.w200,
-                    fontFamily: "Lexend Deca",
-                    fontSize: 14),
-                decoration: InputDecoration(
-                  prefixIcon: SvgPicture.asset(
-                    ImageAssets.calender,
-                    fit: BoxFit.scaleDown,
-                  ),
-                  contentPadding: EdgeInsets.all(10),
-                  label: Text(
-                    "End Date",
-                    style: TextStyle(
-                        color: Color(0xff6E6A7C),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 9,
-                        fontFamily: "Lexend Deca"),
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(17),
-                      borderSide: BorderSide(color: Colors.white)),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(17)),
-                  fillColor: Colors.white,
-                  filled: true,
-                ),
+            DefaultFormField(
+              height: 40,
+              icon: SvgPicture.asset(
+                ImageAssets.calender_icon,
+                fit: BoxFit.scaleDown,
               ),
+             
             ),
             Container(
               margin: EdgeInsets.only(top: 7),

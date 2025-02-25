@@ -1,10 +1,11 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  // ignore: constant_identifier_names
-  static const BackgroundColor = Color(0xffF3F5F4);
-  // ignore: constant_identifier_names
-  static const ButtonColor = Color(0xffCEEBDC);
-  static const darkGreen = Color(0xff149954);
-
+  static const Color BackgroundColor = Color(0xffF3F5F4);
+  static const Color ButtonColor = Color(0xffCEEBDC);
+  static const Color darkGreen = Color(0xff149954);
+  static const Color white = Colors.white;
+  static const Color text_black = Color(0xff24252C);
 }
