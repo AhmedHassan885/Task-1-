@@ -25,9 +25,12 @@ class Profile extends StatelessWidget {
             height: 300,
           ),
           SizedBox(height: 30),
-          DefaultContainer(icon: Icon(Icons.person_3_outlined), title: "Update profile"),
+          DefaultContainer(
+              icon: Icon(Icons.person_3_outlined), title: "Update profile"),
           SizedBox(height: 20),
-          DefaultContainer(icon: SvgPicture.asset(ImageAssets.history_icon), title: "History"),
+          DefaultContainer(
+              icon: SvgPicture.asset(ImageAssets.history_icon),
+              title: "History"),
           SizedBox(height: 20),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 15),
@@ -39,10 +42,12 @@ class Profile extends StatelessWidget {
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
+                borderRadius: BorderRadius.circular(15),
                 icon: SvgPicture.asset(ImageAssets.arrow_bottom),
                 padding: EdgeInsets.symmetric(horizontal: 3),
                 alignment: Alignment.centerLeft,
                 isExpanded: true,
+                itemHeight: 55,
                 hint: Text(
                   "Selected Option",
                   style: TextStyle(
