@@ -1,6 +1,5 @@
 import 'package:course/config/app_colors.dart';
 import 'package:course/screen_one.dart';
-import 'package:course/train.dart';
 import 'package:flutter/material.dart';
 
 void main() {

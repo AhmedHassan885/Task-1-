@@ -1,5 +1,4 @@
 import 'package:course/screen_two.dart';
-import 'package:course/task.dart';
 import 'package:flutter/material.dart';
 
 class Screen1 extends StatelessWidget {
