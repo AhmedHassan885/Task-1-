@@ -1,6 +1,9 @@
-import 'package:course/config/app_colors.dart';
-import 'package:course/screen_one.dart';
+import 'package:course/core/resource%20manager/app_colors.dart';
+import 'package:course/features/Auth/manager/cubit/Auth_cubit.dart';
+import 'package:course/features/Start/view/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,63 +14,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          scaffoldBackgroundColor: AppColors.BackgroundColor,
-          appBarTheme: AppBarTheme(
-            backgroundColor: AppColors.BackgroundColor,
-          )),
-      debugShowCheckedModeBanner: false,
-      home: Screen1(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-  });
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(),
-      appBar: AppBar(
-        actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-        ],
-        title: Text(
-          "Task 1",
-          style: TextStyle(
-              color: Colors.lightBlue,
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              "Hello World",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Icon(Icons.celebration)
-        ],
+    return BlocProvider(create: (context) => AuthCubit(),
+      child: GetMaterialApp(
+        theme: ThemeData(
+            appBarTheme: AppBarTheme(backgroundColor: AppColors.white),
+            fontFamily: "Montserrat",
+            scaffoldBackgroundColor: AppColors.white),
+        debugShowCheckedModeBanner: false,
+        home: Splash(),
       ),
     );
   }
